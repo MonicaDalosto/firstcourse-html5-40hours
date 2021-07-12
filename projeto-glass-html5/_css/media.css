@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+div#tv-radio { /*Aula 32: Formatação da página 'Multimídia', adicionar uma imagem para servir de plano de fundo para o meu aúdio e vídeo. */
+	width: 900px; /* Largura da <div>, mas utilizamos o tamanho da imagem de fundo. */
+	height: 580px; /* Altura da <div>, mas utilizamos o tamanho da imagem de fundo. */
+	margin: auto; /* margens automáticas */
+	background: url("../_imagens/radio-tv.png") no-repeat; /* Imagem de fundo da <div> */
+}
+
+audio#musica { /* Aula 32: Formatar a tag <audio> para que o controle fique dentro da imagem do rádio */
+	display: block; /* Para ser exibido como um bloco */
+	position: relative; /* Posicionamento */
+	left: 573px;
+	top: 465px;
+	width: 300px; /* Largura do controle do aúdio */
+	height: 30px;
+}
+
+video#filme {
+	display: block;
+	position: relative;
+	left: 87px;
+	top: 50px;
+	width: 440px; /* Largura do poster do player */
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html> <!-- Aula 24: Nesta aula, fizemos alguns ajustes no código para deixá-lo mais curto, mas o Problema a ser resolvido continua: Depois que a Lâmpada for quebrada, ela deve permanecer quebrada. Com o código abaixo, ela volta ao apagado e aceso, se eu mover o mouse -->
+<html>
+<head>
+	<title>Teste JavaScript</title>
+	<meta charset="utf-8"/>
+	<script type="text/javascript"> // Início do código em JavaScript
+		function mudaLampada(tipo) { // Aula 24: Diferente do que foi feito na aula 23, que criamos uma função para cada ação, nessa aula foi criada somente uma função e definidos parâmetros para ela. Assim, na chamada da função definimos um nome para o parâmetro que foi colocado entre parênteses '(tipo)'. Depois disso, foi criada a verificação desse parâmetro:
+			if (tipo == 1) { //  Se tipo 1 = acendeLampada. O igual em JS são dois simbolos de igual juntos (==).
+				arquivo = "_imagens/lampada-acesa.jpg";
+			}
+			if (tipo == 2) { // Se tipo 2 = apagaLampada.
+				arquivo = "_imagens/lampada-apagada.jpg";
+			}
+			if (tipo == 3) { // Se tipo 3 = quebraLampada.
+				arquivo = "_imagens/lampada-quebrada.jpg";
+			}
+			document.getElementById("luz").src = arquivo; // Aula 24: Nesta linha, o src vai receber a variável arquivo, que foi definida acima, de acordo com a verificação realizada por If. -- Na aula 23, foi criada uma função diferente para cada ação e, dentro dela, um document.getElementById chamando o arquivo de imagem correspondente.
+		}
+	</script> <!-- Fim do código em JavaScript -->
+</head>
+<body>
+	<h1>Acenda a lâmpada</h1>
+	<img src="_imagens/lampada-apagada.jpg" id="luz" onmousemove="mudaLampada(1)" onmouseout="mudaLampada(2)" onclick="mudaLampada(3)" /> <!-- Aula 24: Diferente da aula anterior, nesta aula criamos uma função com diferentes parâmetros, por isso para cada ação definida (onmousemove, onmouseout e onclick) o código vai chamar a mesma função, indicando entre parênteses o número do parâmetro definido nos IFs acima. -->
+</body>
+</html>

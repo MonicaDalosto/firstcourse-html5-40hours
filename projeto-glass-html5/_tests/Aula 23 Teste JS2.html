@@ -1,0 +1,22 @@
+<!DOCTYPE html> <!-- Problema a ser resolvido na próxima aula (24): Depois que a Lâmpada for quebrada, ela deve permanecer quebrada. Com o código abaixo, ela volta ao apagado e aceso, se eu mover o mouse -->
+<html>
+<head>
+	<title>Teste JavaScript</title>
+	<meta charset="utf-8"/>
+	<script type="text/javascript"> // Início do código em JavaScript
+		function acendeLampada() { // Aula 23: Aqui foi criada uma função JS que será utilizada pelo HTML5 mais abaixo.
+		document.getElementById("luz").src = "_imagens/lampada-acesa.jpg"; // Aula 23: Define que a função 'acendeLampada' vai buscar o Id dado abaixo 'luz' e trocar a imagem original para a imagem de lampada-acesa.jpg
+		}
+		function apagaLampada() {
+			document.getElementById("luz").src = "_imagens/lampada-apagada.jpg";
+		}
+		function quebraLampada() {
+			document.getElementById("luz").src = "_imagens/lampada-quebrada.jpg";
+		}
+	</script> <!-- Fim do código em JavaScript -->
+</head>
+<body>
+	<h1>Acenda a lâmpada</h1>
+	<img src="_imagens/lampada-apagada.jpg" id="luz" onmousemove="acendeLampada()" onmouseout="apagaLampada()" onclick="quebraLampada()" /> <!-- Aula 23: as chamadas em HTML5 que começam por 'on...' significam 'se' ou 'quando'. Nesse caso, o comando 'onclick' define que quando clicar na imagem da lâmpada, deve ocorrer a função JS acima de "quebraLampada". -->
+</body>
+</html>

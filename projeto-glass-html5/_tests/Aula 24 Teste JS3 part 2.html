@@ -1,0 +1,31 @@
+<!DOCTYPE html> <!-- Aula 24: Nesta aula, fizemos alguns ajustes no código para deixá-lo mais curto/simplificado e resolvemos o problema de a Lâmpada voltar ao normal e acender depois de ter sido quebrada. -->
+<html>
+<head>
+	<title>Teste JavaScript</title>
+	<meta charset="utf-8"/>
+	<script type="text/javascript"> // Início do código em JavaScript
+		var quebrada = false; // Aula 24: Criada a variável 'quebrada' e colocada antes da função para ser aplicada a função completa. Isso significa que a função 'mudaLampada' será executada se a 'var' for 'false'.
+		function mudaLampada(tipo) { // Aula 24: Diferente do que foi feito na aula 23, que criamos uma função para cada ação, nessa aula foi criada somente uma função e definidos parâmetros para ela. Assim, na chamada da função definimos um nome para o parâmetro que foi colocado entre parênteses '(tipo)'. Depois disso, foi criada a verificação desse parâmetro:
+			if (tipo == 1) { //  Se tipo 1 = acendeLampada. O igual em JS são dois simbolos de igual juntos (==).
+				arquivo = "_imagens/lampada-acesa.jpg";
+			}
+			if (tipo == 2) { // Se tipo 2 = apagaLampada.
+				arquivo = "_imagens/lampada-apagada.jpg";
+			}
+			if (tipo == 3) { // Se tipo 3 = quebraLampada.
+				arquivo = "_imagens/lampada-quebrada.jpg";
+			}
+			if (!quebrada) { // Aula 24: criamos uma nova verificação que significa que se a variável 'quebrada' for false, executa a troca de imagens.
+				document.getElementById("luz").src = arquivo; // Aula 24: a fonte da imagem a ser utilizada será a variável 'arquivo', que irá buscar o arquivo de imagem correspondente ao parâmetro (1, 2 ou 3) executado.
+				if (tipo == 3) {
+					quebrada = true;
+				} // Aula 24: dentro dessa verificação, adicionamos uma nova, dizendo que se o parâmetro três da função 'mudaLampada' for executado, então a variável 'quebrada' se tornará verdadeira. Com isso, anulamos as ações da função 'mudaLampada', pois o sistema irá fazer a verificação da variável 'quebrada' antes da execução.
+			}
+		}
+	</script> <!-- Fim do código em JavaScript -->
+</head>
+<body>
+	<h1>Acenda a lâmpada</h1>
+	<img src="_imagens/lampada-apagada.jpg" id="luz" onmousemove="mudaLampada(1)" onmouseout="mudaLampada(2)" onclick="mudaLampada(3)" /> <!-- Aula 24: Diferente da aula anterior, nesta aula criamos uma função com diferentes parâmetros, por isso para cada ação definida (onmousemove, onmouseout e onclick) o código vai chamar a mesma função, indicando entre parênteses o número do parâmetro definido nos IFs acima. -->
+</body>
+</html>

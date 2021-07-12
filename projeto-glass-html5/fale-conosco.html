@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Tudo sobre Google Glass</title> <!-- o que aparece na aba do Navegador -->
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css"/><!-- como o estilo/formatação do texto será realizado em CSS3, essa linha linka o texto ao arquivo com os parâmetros de formatação em CSS3. -->
+    <link rel="stylesheet" type="text/css" href="_css/form.css"/>
+    <script language="javascript" src="_javascript/funcoes.js"></script>
+    <script>
+        function calc_total() {
+            var qtd = parseInt(document.getElementById('cQtd').value); /*Aula 36: 'parseInt' transforma o dado do id=cQtd em número inteiro */
+            tot = qtd * 1500;
+            document.getElementById('cTot').value = tot;
+        }
+    </script>
+</head>
+
+<body>
+<div id="interface"> <!-- uma divisão do site, essa <div> é um container, tudo que estiver dentro dela terá posição relativa e o que estiver fora posição absoluta (somente o menu que terá posição absoluta dentro da <div> -->
+
+    <header id= "cabecalho"> <!-- tudo o que estiver dentro de Header, será o cabeçalho do site -->
+    <hgroup>
+    <h1>Google Glass</h1>
+    <h2>A revolução do Google está chegando</h2>
+    </hgroup>
+
+    <img id="icone" src="_imagens/contato.png"/>
+<!-- quando eu adiciono 'id="icone"', significa que estou definindo um nome para essa imagem, isso é importante para que eu possa fazer a formatação de forma específica no arquivo de estilo.css referênciando pelo nome -->
+<!-- src significa a fonte da imagem, a pasta e o arquivo em que ela está armazenada -->
+<!-- &nbsp; significa Non-breaking Space ou espaço entre palavras sem quebrar linha -->
+<!-- <br/> significa Break Row ou quebra de linha -->
+<!-- &shy; significa Soft Hyphen ou Hifenização rápida -->
+<!-- <wbr/> significa Word Breaker ou quebra de palavras sem hífen -->
+
+    <nav id="menu">
+    <h1>Menu Principal</h1>
+    <ul type="disc">
+        <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li> <!-- a tag <a> criada em todas os itens da lista, servirá de âncora para que no futuro nós utilizemos nas definições de estilo e formatação. -->
+        <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+        <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+        <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+        <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+    </ul>
+    </nav>
+
+    </header>
+
+    <section id="corpo-full">
+        <article id=noticia-principal>
+            <header id="cabecalho-artigo">
+                <hgroup>
+                    <h3>Fale Conosco > Contato</h3> <!-- Bread crumb (Migalhas de pão) -->
+                    <h1>Formulário de Contato</h1>
+                    <h2>por Gustavo Guanabara</h2>
+                    <h3 class="direita">Atualizado em 01/Maio/2013</h3> <!-- Aula 21: Como essa linha do título três possui um alinhamento diferente dos demais títulos 3, criamos uma classe chamada 'direita' e aplicaremos a formatação 'text-align' específica para essa classe. -->
+                </hgroup>
+            </header>
+
+            <form method="post" id="fContato" action="mailto:contato@cursoemvideo.com" oninput="calc_total()"> <!-- Aula 33: Abertura do Formulário. A tag FORM serve para criar um formulário, onde o usuário vai poder interagir com seu site e fornecer dados. Aula 34: Para a tag FORM, o parâmetro METHOD aceita os valores GET e POST: – O método GET envia dados via URL (endereço do site). É um método mais rápido e menos seguro. – O método POST envia dados por pacotes. É um método um pouco mais lento, mas possui uma segurança maior. O parâmetro ACTION indica o local para onde os dados serão enviados. Quem utiliza MAILTO, deve ter um cliente de e-mail previamente configurado.-->
+
+            <fieldset id="usuario"><legend>Identificação do Usuário</legend> <!-- A tag FIELDSET em HTML cria conjuntos de campos agrupados dentro de uma linha container que vai identificar cada uma das sessões. A tag LEGEND cria uma legenda para cada FIELDSET, um texto que fica sobre as linhas. -->
+                <p><label for="cNome">Nome:</label> <input type="text" name="tNome" id="cNome" size="20" maxlength="40" placeholder="Nome Completo"></p> <!-- A tag INPUT serve para criar a grande maioria dos campos de formulários em HTML5. A tag INPUT com o parâmetro TYPE = “text” cria uma caixa de texto. Além do TYPE, é preciso informar os parâmetros NAME (t de type) e ID (c de campo) para a tag. O parâmetro SIZE indica a quantidade de caracteres exibidos simultaneamente em uma caixa de texto. O parâmetro MAXLENGTH indica a quantidade de caracteres aceitos em uma caixa de texto. O parâmetro PLACEHOLDER configura um conteúdo informativo dentro de um objeto de formulário. Ao clicar sobre o objeto, o PLACEHOLDER desaparecerá. -->
+                <p><label for="cSenha">Senha:</label> <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 dígitos"></p> <!-- Para criar uma caixa de senha em um formulário HTML, utilizaremos a tag INPUT com TYPE = “password” -->
+                <p><label for="cMail">E-mail:</label> <input type="email" name="tMail" id="cMail" size="20" maxlength="40"/></p> <!-- Para solicitar um e-mail, utilizaremos INPUT com TYPE = “email”, que é exclusivo da HTML5. -->
+                <fieldset id="sexo"><legend>Sexo:</legend> <!-- Para criar opções a serem selecionadas na forma de botões de rádio, utilizaremos INPUT com parâmetro TYPE = “radio”. OBS: Para objetos do tipo RADIO que fazem parte de um mesmo grupo, todos devem ter o mesmo NAME. Isso é muito importante. -->
+                    <input type="radio" name="tSexo" id="cMasc" checked="checked" /> <label for="cMasc">Masculino</label><br/> <!-- Para deixar uma opção previamente marcada, utilizamos o parâmetro CHECKED. -->
+                    <input type="radio" name="tSexo" id="cFem"/> <label for="cFem">Feminino</label> <!-- Para criar palavras relacionadas a objetos de formulário, utilizamos a tag LABEL com um ID. Para criar a relação entre objetos e LABEL, utilizamos o parâmetro FOR do objeto. -->
+                </fieldset>
+                <p><label for="cNasc">Data de Nascimento:</label> <input type="date" name="tNasc" id="cNasc"/></p> <!-- A tag INPUT com parâmetro TYPE = “date”, cria uma caixa de seleção de data, com um calendário (depende do navegador utilizado). -->
+            </fieldset>
+
+            <fieldset id="endereco"><legend>Endereço do Usuário</legend>
+                <p><label for="cRua">Logradouro:</label> <input type="text" name="tRua" id="cRua" size="15" maxlength="80" placeholder="Rua, Av, Trav..."/></p>
+                <p><label for="cNum">Número:</label> <input type="number" name="tNum" id="cNum" min="0" max="99999"/></p>
+                <p><label for="cEst">Estado:</label> 
+                    <select name="tEst" id="cEst">
+                        <optgroup label="Região Sudeste">
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="SP" selected>São Paulo</option>
+                            <option value="MG">Minas Gerais</option>
+                        </optgroup>
+                        <optgroup label="Região Sul">
+                            <option value="PR">Paraná</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                        </optgroup>
+                    </select></p>
+                <p><label for="cCid">Cidade:</label> <input type="text" name="tCid" id="cCid" size="20" maxlength="40" placeholder="Sua Cidade" list="cidades"></p>
+                <datalist id="cidades">
+                    <option value="Rio de Janeiro"></option>
+                    <option value="Nova Iguaçu"></option>
+                    <option value="Niterói"></option>
+                    <option value="Belford Roxo"></option>
+                </datalist>
+            </fieldset>
+
+            <fieldset id="mensagem"><legend>Mensagem do Usuário</legend>
+                <p><label for="cUrg">Grau de Urgência:</label>
+                Mín<input type="range" name="tUrg" id="cUrg" min="1" max="5" step="1">Máx</p>
+                <p><label for="cMsg">Mensagem:</label>
+                <textarea name="tMsg" id="cMsg" cols="45" rows="5" placeholder="Deixe aqui sua Mensagem"></textarea></p>    
+            </fieldset>
+
+            <fieldset id="pedido"><legend>Quero um Google Glass</legend>
+                <p><input type="checkbox" name="tPed" id="cPed" checked="checked"/><label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
+                <p><label for="cCor">Cor: </label><input type="color" name="tCor" id="cCor" value="#0000FF"/></p>
+                <p><label for="cQtd">Quantidade: </label><input type="number" name="tQtd" id="cQtd" min="0" max="5"/> </p>
+                <p><label for="cTot">Preço Total: R$ </label><input type="text" name="tTot" id="cTot" placeholder="Total a Pagar" readonly="readonly"/></p>
+            </fieldset>
+
+
+            <!-- <input type="submit" value="Enviar"/> Aula 36: Como incluir um botão enviar de forma mais simples -->
+            <input type="image" name="tEnviar" src="_imagens/botao-enviar.png"/>
+            </form>
+
+        </article>
+    </section>
+
+<footer id="rodape">
+<p>Copyright&copy; 2013 - by Gustavo Guanabara <br/>
+<a href="http://facebook.com/cursosemvideo" target="_blank">Facebook</a> | 
+<a href="http://twitter.com/cursosemvideo" target="_blank">Twitter</a></p>
+</footer>
+</div>
+</body>
+</html>

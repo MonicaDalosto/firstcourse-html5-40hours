@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Tudo sobre Google Glass</title> <!-- o que aparece na aba do Navegador -->
+	<link rel="stylesheet" type="text/css" href="_css/estilo.css"/><!-- como o estilo/formatação do texto será realizado em CSS3, essa linha linka o texto ao arquivo com os parâmetros de formatação em CSS3. -->
+	<link rel="stylesheet" type="text/css" href="_css/media.css">
+	<script language="javascript" src="_javascript/funcoes.js"></script>
+</head>
+
+<body>
+<div id="interface"> <!-- uma divisão do site, essa <div> é um container, tudo que estiver dentro dela terá posição relativa e o que estiver fora posição absoluta (somente o menu que terá posição absoluta dentro da <div> -->
+
+	<header id= "cabecalho"> <!-- tudo o que estiver dentro de Header, será o cabeçalho do site -->
+	<hgroup>
+	<h1>Google Glass</h1>
+	<h2>A revolução do Google está chegando</h2>
+	</hgroup>
+
+	<img id="icone"	src="_imagens/multimidia.png"/>
+<!-- quando eu adiciono 'id="icone"', significa que estou definindo um nome para essa imagem, isso é importante para que eu possa fazer a formatação de forma específica no arquivo de estilo.css referênciando pelo nome -->
+<!-- src significa a fonte da imagem, a pasta e o arquivo em que ela está armazenada -->
+<!-- &nbsp; significa Non-breaking Space ou espaço entre palavras sem quebrar linha -->
+<!-- <br/> significa Break Row ou quebra de linha -->
+<!-- &shy; significa Soft Hyphen ou Hifenização rápida -->
+<!-- <wbr/> significa Word Breaker ou quebra de palavras sem hífen -->
+
+	<nav id="menu">
+	<h1>Menu Principal</h1>
+	<ul type="disc">
+		<li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/multimidia.png')"><a href="index.html">Home</a></li> <!-- a tag <a> criada em todas os itens da lista, servirá de âncora para que no futuro nós utilizemos nas definições de estilo e formatação. -->
+		<li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/multimidia.png')"><a href="specs.html">Especificações</a></li>
+		<li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/multimidia.png')"><a href="fotos.html">Fotos</a></li>
+		<li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/multimidia.png')"><a href="multimidia.html">Multimídia</a></li>
+		<li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/multimidia.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+	</ul>
+	</nav>
+	</header>
+
+	<section id="corpo-full">
+		<article id=noticia-principal>
+			<header id="cabecalho-artigo">
+				<hgroup>
+					<h3>Glass > Multimídia</h3> <!-- Bread crumb (Migalhas de pão) -->
+					<h1>Sons e Vídeos</h1>
+					<h2>por Gustavo Guanabara</h2>
+					<h3 class="direita">Atualizado em 01/Maio/2013</h3> <!-- Aula 21: Como essa linha do título três possui um alinhamento diferente dos demais títulos 3, criamos uma classe chamada 'direita' e aplicaremos a formatação 'text-align' específica para essa classe. -->
+				</hgroup>
+			</header>
+
+			<div id="tv-radio">
+				<p>Áudio e Vídeo</p>
+				<audio id="musica" controls="controls"> <!-- Aula 31: A tag <audio> permite que seja inserido um arquivo de aúdio no HTML, and the 'controls' attribute shows the default video controls (play, pause, etc). Como o curso é de 2013, adicionei três formatos de video que eram compatíveis com os browsers na época e de acordo com o mostrado no curso. Para futuros trabalhos, preciso pesquisar quais formatos são reconhecidos pelos principais browsers. Utilizei o site: https://convertio.co/pt/ para fazer a conversão. -->
+					<source src="_media/2009-lovers-carvings-bibio.mp3" type="audio/mpeg"/> <!-- Chrome -->
+					<source src="_media/2009-lovers-carvings-bibio.m4a" type="audio/x-aac"/> <!-- Safari -->
+					<source src="_media/2009-lovers-carvings-bibio.ogg" type="audio/ogg"/> <!-- Firefox -->
+					Desculpe, mas não foi possível carregar o aúdio. <!-- Essa mensagem será exibida caso nenhum dos três arquivos sejam executados no navegador do usuário. -->
+				</audio>
+				<video id="filme" controls="controls" poster="_imagens/video-mini03.jpg"> <!-- Aula 31: A tag <video> permite que seja inserido um arquivo de vídeo no HTML, the 'controls' attribute shows the default video controls (play, pause, etc), and the 'poster' attribute provides an image to show before the video loads. -->
+					<source src="_media/getting-started.mp4" type="video/mp4"/> <!-- Chrome -->
+					<source src="_media/getting-started.webm" type="video/webm"/> <!-- Safari -->
+					<source src="_media/getting-started.ogv" type="video/ogg"/> <!-- Firefox -->
+					Desculpe, mas não foi possível carregar o vídeo. <!-- Essa mensagem será exibida caso nenhum dos três arquivos sejam executados no navegador do usuário. -->
+				</video> <!-- Como o curso é de 2013, adicionei três formatos de video que eram compatíveis com os browsers na época e de acordo com o mostrado no curso. Para futuros trabalhos, preciso pesquisar quais formatos são reconhecidos pelos principais browsers. Utilizei o site: https://convertio.co/pt/ para fazer a conversão. Mais informações em https://www.html5rocks.com/en/tutorials/video/basics// -->
+				<!-- Aula 32: Adicionar vídeos do YouTube. O código da linha abaixo, é o exemplo para adicionar um vídeo diretamente do Youtube, neste caso utilizando a tag <iframe>. Esse código está disponível no prórpio Youtube, basta clicar em 'share' >> 'embed' e copiar o código. Deixei ele como comentário para não aparecer dois vídeos na tela. -->
+				<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/4EvNxWhskf8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+			</div>
+		</article>
+	</section>
+
+<footer id="rodape">
+<p>Copyright&copy; 2013 - by Gustavo Guanabara <br/>
+<a href="http://facebook.com/cursosemvideo" target="_blank">Facebook</a> | 
+<a href="http://twitter.com/cursosemvideo" target="_blank">Twitter</a></p>
+</footer>
+</div>
+</body>
+</html>

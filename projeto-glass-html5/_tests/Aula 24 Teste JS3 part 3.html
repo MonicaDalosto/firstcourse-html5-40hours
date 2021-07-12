@@ -1,0 +1,22 @@
+<!DOCTYPE html> <!-- Final da Aula 24: Foram realizadas algumas simplificações no código e com isso os IFs foram eliminados -->
+<html>
+<head>
+	<title>Teste JavaScript</title>
+	<meta charset="utf-8"/>
+	<script type="text/javascript"> // Início do código em JavaScript
+		var quebrada = false; // Aula 24: Criada a variável 'quebrada' e colocada antes da função para ser aplicada a função completa. Isso significa que a função 'mudaLampada' será executada se a 'var' for 'false'.
+		function mudaLampada(tipo) { // Aula 24: Diferente do que foi feito na aula 23, que criamos uma função para cada ação, nessa aula foi criada somente uma função e definidos parâmetros para ela. Assim, na chamada da função definimos um nome para o parâmetro que foi colocado entre parênteses '(tipo)'. Depois disso, foi criada a verificação desse parâmetro:
+			if (!quebrada) { // Aula 24: criamos uma nova verificação que significa que se a variável 'quebrada' for false, executa a troca de imagens.
+				document.getElementById("luz").src = "_imagens/" + tipo + ".jpg"; // Nessa linha, eu troco a fonte do arquivo de imagem da variável 'arquivo' para "o nome da pasta + o parâmetro 'tipo' + '.jpg'" (Isso é uma concatenação). Então, esse código vai buscar o arquivo na pasta "_imagens". O arquivo de imagem é dado por 'tipo' (que é o nome genérico do parâmetro), pois sabemos que os parâmetros foram definidos como o nome do arquivo da imagem (que ficam dentro dos parênteses da ação do HTML na linha 20). O .jpg adicionado ao final identifica o tipo dos arquivos.
+				if (tipo == 'lampada-quebrada') {
+					quebrada = true;
+				} // Aula 24: dentro dessa verificação, adicionamos uma nova, dizendo que se o parâmetro 'lampada-quebrada' da função 'mudaLampada' foi executado, então a variável 'quebrada' se tornará verdadeira. Com isso, anulamos as ações da função 'mudaLampada', pois o sistema irá fazer a verificação da variável 'quebrada' antes da execução.
+			}
+		}
+	</script> <!-- Fim do código em JavaScript -->
+</head>
+<body>
+	<h1>Acenda a lâmpada</h1>
+	<img src="_imagens/lampada-apagada.jpg" id="luz" onmousemove="mudaLampada('lampada-acesa')" onmouseout="mudaLampada('lampada-apagada')" onclick="mudaLampada('lampada-quebrada')" /> <!-- Final da Aula 24: Realizamos mais uma simplificação no código, em vez de passar os parâmetros 1, 2 e 3, vamos passar diretamente o nome do arquivo entre aspas simples. Com isso, eu elimino todos os IFs que são mostrados no arquivo: Aula 24 Teste JS3 part2. -->
+</body>
+</html>

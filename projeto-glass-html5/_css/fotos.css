@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+ul#album-fotos { /* Aula 29: Formatação da lista não ordenada */
+	width: 700px; /* Aula 29: Largura da Lista não ordenada */
+	margin:	0 auto; /* Aula 29: Margen de zero na esquerda e automática para os demais lados */
+	padding: 50px; /* Aula 29: Margem interna da 'ul' */
+	overflow: none;
+	list-style: none; /* Aula 29: Retirar as marcações dos itens de lista */
+}
+
+ul#album-fotos li { /* Aula 29: Formatação geral dos itens de lista */
+	float: left; /* Definido que os itens de lista ficarão um ao lado do outro e não o padrão um abaixo do outro */
+	width: 200px; /* Largura */
+	height: 200px; /* Altura. Como defini a largura e a altura do mesmo tamanho, eu criei um quadrado/box para cada 'li'. Defini a 'ul' com 700px de largura e os itens com 200px, como são 6 itens no total, a página vai ajustar para ficarem 3 itens em cada linha. */
+	margin: 10px; /* Margem externa do 'li' */
+	border: 5px solid #ffffff; /* Definição da borda (cor: branca) */
+	background-color: #ffffff; /* Definição da cor de fundo: branca */
+	box-shadow: 1px 1px 3px rgba(0,0,0,.4); /* Efeito de sombra (deslocamento lateral, deslocamento vertical, espalhamento e cor) */
+	/* -webkit-transition: all 0.4s ease-in; Esse comando vai ser descontinuado e substituído apenas pelo 'transition:' que escrevi na linha abaixo */
+	transition: all 0.4s ease-in; /* Esse comando define as características da transição da imagem, quando houver (fonte: https://www.w3schools.com/css/css3_transitions.asp). All: para todas as transições, 0.4s: é o tempo da transição e ease-in: specifies a transition effect with a slow start; */
+}
+
+ul#album-fotos li span { /* Aula 29 e 30: Adicionando a formatação para todas as <li> que tiverem a tag <span> */
+	opacity: 0; /* Tornando o texto do <li> transparente. Para alterar a opacidade de um elemento, basta atribuir um valor entre 0 e 1 à propriedade, opacity. Neste caso, o valor 0 indica um elemento completamente transparente, enquanto o valor 1 torna o elemento totalmente opaco. */
+	color: #ffffff;
+	text-shadow: 1px 1px 1px #000000; /* Sombra do texto: preta */
+	background-color: rgba(0,0,0,.3); /* Cor de fundo do texto: preta */
+	font-size: 9pt; /* Tamanho da fonte */
+	line-height: 370px; /* Altura de linha, com isso o texto vai ficar na parte inferior da imagem que é de 400px */
+	padding: 5px; /* Margem interna */
+}
+
+ul#album-fotos li:hover { /* Aula 30: Usando o ':hover' selector para todos os <li> quando passar o mouse sobre eles */
+/*	-webkit-transform: scale(1.5); Esse comando vai ser descontinuado e substituído apenas pelo 'transform:' que escrevi na linha abaixo */
+transform: scale(1.5); /* Esse comando transforma a imagem, nesse caso, a escala da imagem aumenta para 1.5 */
+}
+
+ul#album-fotos li:hover span { /* Aula 30: The ':hover' selector is used to select elements when you mouse over them */
+	opacity: 1; /* Quando passar o mouse pela <li> (a imagem é o li), o <span> (ou seja, o texto do <li>) vai se tornar opaco, deixar de ser transparente */
+}
+
+ul#album-fotos li#foto01 {
+	background: url('../_imagens/galeria-01.jpg') no-repeat; /* Aula 29: Inserindo a imagem como plano de fundo do 'li' através do recurso 'url' */
+	background-position: 50% 50%; /* Aula 30: Defino que a posição da imagem será centralizada no box <li> */
+	background-size: 400px 400px; /* Defino o tamanho original da imagem, dessa forma, a imagem não aparecerá inteira na box, mas parte dela partindo do centro */
+	background-color: #ffffff; /* Cor de fundo da imagem: branca */
+}
+ul#album-fotos li#foto01:hover { /* Aula 30: Quando passar o mouse por cima da imagem, altera a visualização */
+	background-position: 0px 0px; /* Defino que a imagem será mostrada a partir do canto superior esquerdo */
+	background-size: 200px 200px; /* Defino que o tamanho dela será o mesmo da box da <li> */
+}
+
+ul#album-fotos li#foto02 {
+	background: url('../_imagens/galeria-02.jpg') no-repeat;
+	background-position: 50% 50%;
+	background-size: 400px 400px;
+	background-color: #ffffff;
+}
+ul#album-fotos li#foto02:hover {
+	background-position: 0px 0px;
+	background-size: 200px 200px;
+}
+
+ul#album-fotos li#foto03 {
+	background: url('../_imagens/galeria-03.jpg') no-repeat;
+	background-position: 50% 50%;
+	background-size: 400px 400px;
+	background-color: #ffffff;
+}
+ul#album-fotos li#foto03:hover {
+	background-position: 0px 0px;
+	background-size: 200px 200px;
+}
+
+ul#album-fotos li#foto04 {
+	background: url('../_imagens/galeria-04.jpg') no-repeat;
+	background-position: 50% 50%;
+	background-size: 400px 400px;
+	background-color: #ffffff;
+}
+ul#album-fotos li#foto04:hover {
+	background-position: 0px 0px;
+	background-size: 200px 200px;
+}
+
+ul#album-fotos li#foto05 {
+	background: url('../_imagens/galeria-05.jpg') no-repeat;
+	background-position: 50% 50%;
+	background-size: 400px 400px;
+	background-color: #ffffff;
+}
+ul#album-fotos li#foto05:hover {
+	background-position: 0px 0px;
+	background-size: 200px 200px;
+}
+
+ul#album-fotos li#foto06 {
+	background: url('../_imagens/galeria-06.jpg') no-repeat;
+	background-position: 50% 50%;
+	background-size: 400px 400px;
+	background-color: #ffffff;
+}
+ul#album-fotos li#foto06:hover {
+	background-position: 0px 0px;
+	background-size: 200px 200px;
+}

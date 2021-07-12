@@ -1,0 +1,245 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap'); /* Aula 17: Fonte do https://fonts.google.com/ */
+@font-face { /* Aula 17: adicionando uma fonte diferente no Website. */
+	font-family: 'FonteLogo'; /* definir um nome para a nova fonte. */
+	src: url("../_fonts/bubblegum-sans-regular.otf"); /* referênciar a fonte da pasta de origem */
+}
+
+body {
+	font-family: Arial, sans-serif; /* Aula 21: definindo a fonte para o artigo todo; */
+ 	background-color: #dddddd; /*cinza*/
+	color: rgba(0,0,0,1); /*preto*/
+}
+
+div#interface {
+	width: 900px;
+	background-color: #ffffff; /*branca*/
+	margin: -20px auto 0px auto; /* ordem das margens: cima; direita; baixo; esquerda (C-D-B-E). */
+	box-shadow: 0px 0px 10px rgba(0,0,0,.5); /*sombra: deslocamento lateral; deslocamento vertical; espalhamento; cor da sombra */
+	padding: 10px; /*espaço entre a margem e o texto. Se as quatro margens forem iguais, pode-se colocar apenas uma vez o valor (neste caso 10px), mas se as margens forem diferentes, adiciona-se os valores na mesma ordem da margem: C-D-B-E. */
+}
+
+p { /* Definindo os parâmetros do parágrafo. */
+	text-align: justify;
+	text-indent: 50px;
+}
+
+a { /* Aula 21: Previamente, definimos a tag âncora <a> para os links. Nesta parte, estamos definindo alguns detalhes de formatação dessa tag. */
+	color: #606060; /*  */
+	text-decoration: none; /* Quando inserimos um link, o html insere de forma automática o sublinhado no texto, definindo 'none' para a 'text-decoration', toda e qualquer decoração do texto é retirada. */
+}
+
+a:hover { /* Aula 21: 'hover' é o tipo de formatação a ser exibido quando passamos o mouse sobre determinado texto. Nesse caso, sobre o texto com a tag <a>; */
+	text-decoration: underline; /* Definindo a formatação de sublinhado, mas somente quando passarmos o mouse em cima do texto */
+}
+
+header#cabecalho img#icone { /* aula 15: formatação específica da imagem com o nome 'icone': imagem do óculos que fica a direita da tela, com uma parte pra fora do corpo do texto; */
+	position: absolute; /*lembrando que essa posição é absoluta no site e não mais dentro da <div>*/
+	left: 780px;
+	top: 70px;
+}
+
+header#cabecalho { /* aula 16: formatação da área de cabeçalho */
+	border-bottom: 1px #606060 solid; /* Inserir uma borda na parte de baixo do cabeçalho com as características de espessura (1px), cor e tipo (solid/contínua) */
+	height: 150px; /* altura do cabeçalho (a borda inferior vai ficar na altura do cabeçalho */
+	background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 80px; /* adicionar a imagem como fundo do cabeçalho (os dois pontos indicam que eu tenho que voltar uma pasta no arquivo). O 'no-repeat' define que ela apareça uma vez somente no arquivo. Os próximos parâmetros se referem ao deslocamento lateral (0px) e deslocamento vertical (100px). */
+}
+
+header#cabecalho h1 { /* aula 16: definindo a formatação do título 1 do cabeçalho*/
+	font-family: 'FonteLogo', sans-serif;
+	font-size: 30pt;
+	color: #606060;
+	text-shadow: 1px, 1px, 1px, rgba(0,0,0,.6); /* deslocamento, deslocamento vertical, espalhamento e cor. */
+	padding: 0px;
+	margin-bottom: 0px;
+}
+
+header#cabecalho h2 { /* aula 16: definindo a formatação do título 2 do cabeçalho*/
+	font-family: 'Titillium Web', sans-serif; /* Aula 17: Fonte retirada de https://fonts.google.com/*/
+	font-size: 15pt;
+	color: #888888;
+	padding: 0px;
+	margin-top: 0px;
+}
+
+/* Formatação de imagens com legendas */
+
+figure.foto-legenda {
+	position: relative;
+	border: 8px solid white;
+	box-shadow: 1px 1px 4px black;
+}
+
+figure.foto-legenda img {
+	width: 100%;
+	height: 100%;
+}
+
+figure.foto-legenda figcaption {
+	opacity: 0;
+	position: absolute;
+	top:	0px;
+	background-color: rgba(0,0,0,.4);
+	color: white;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	transition: opacity 1s;
+}
+
+figure.foto-legenda:hover figcaption {
+	opacity: 1;
+}
+
+/* Formatação do Menu */
+
+nav#menu { /* Para identificar o ID eu utilizo um # */
+	display: block; /* define que o menu seja um bloco */
+}
+
+nav#menu ul {
+	list-style: none; /* não possui estilo de lista (tira os pontinhos da frente dos items) */
+	text-transform: uppercase; /* define que os items sejam em letras maiúsculas */
+	position: absolute; /* define a posição do objeto dentro do site */
+	top: -20px; /* define a posição do objeto a partir do topo */
+	left: 300px; /* define a posição do objeto a partir da margem esquerda */
+}
+
+nav#menu li {
+	display: inline-block; /* coloca os itens na mesma linha */
+	background-color: #dddddd; /* adiciona cor de fundo nos itens */
+	padding: 10px; /* adiciona espaço dentro do fundo, entre a palavra e a borda */
+	margin: 2px; /* adiciona margem entre os items, fora da borda do fundo */
+	transition: background-color 1s; /* define que o efeito de transição demore 1 segundo */
+}
+
+nav#menu li:hover { /* esse modificador aplica um efeito quando passamos o mouse por cima de um objeto. */
+	background-color: #606060; /* define o efeito de alteração de fundo */
+}
+
+nav#menu h1 {
+	display: none; /* esse comando, esconde o título 'Menu Principal' do site, mas deixa ele no código, pois ele é importante para a semântica do site. */	
+}
+
+nav#menu a { /* esse comando se refere a tudo que estiver âncorado com a tag <a>, tudo o que eu fizer dentro dos {} vai formatar o texto com essa tag. */
+	color: #000000; /* definição da cor preta */
+	text-decoration: none; /* retirando os sublinhados automáticos dos links */
+}
+
+nav#menu a:hover { /* esse modificador aplica um efeito quando passamos o mouse por cima de um objeto. No caso, o objeto escolhido é o texto do menu, trazido pela tag <a> */
+	color: #ffffff;
+	text-decoration: underline;	
+}
+
+section#corpo { /* Aula 18: definindo as section, aside e footer do website e iniciando as formatações delas. */
+	display: block; /* define que a seção será um bloco */
+	width: 500px; /* define a largura da seção */
+	float: left; /* define que a seção vai flutuar pelo lado esquerdo da tela */
+	border-right: 1px solid #606060; /* Aula 18: adicionar borda a direita com os parâmetros de espessura (1px), tipo (solid) e cor (#606060). */
+	padding-right: 15px; /* define a distância interna entre o texto e a borda direita seja de 15 px */
+}
+
+article#noticia-principal h2 { /* Aula 21: definindo artigos dentro das seções, no exercício eu tenho apenas um 'article' dentro da 'section'. */
+	font-size: 13pt;
+	color: #606060;
+	background-color: #dddddd;
+	padding: 5px 0px 5px 10px;
+	margin: 10px, 0px, 10px, 0px;
+}
+
+header#cabecalho-artigo h1 { /* Aula 21: Com o 'header' criado, vamos definir as formatações para os títulos deste header específico; */
+	font-family: 'FonteLogo', sans-serif;
+	font-size: 20pt;
+	color: #606060;
+	margin-bottom: 0px;
+}
+
+header#cabecalho-artigo h2 {
+	font-size: 13pt;
+	color: #cecece;
+	background-color: #ffffff;
+	margin: 0px;
+}
+
+header#cabecalho-artigo h3 {
+	font-size: 12pt;
+	color: #606060;
+}
+
+.direita { /* Aula 21: Como uma linha do título 3 precisa ter um alinhamento diferente dos demais, criamos uma classe dentro desse título com o nome de direita e a formatação abaixo será aplicada somente a essa classe específica; */
+	text-align: right;
+}
+
+table#tabelaspec {
+	 border: 1px solid #606060; /* Aula 19: Colocando borda na tabela (borda somente externa). */
+	 border-spacing: 0px; /* Aula 19: Definindo que os espaços entre as bordas dentro da tabela é de 0px. */
+	 margin-left: auto;
+	 margin-right: auto;
+}
+
+table#tabelaspec td {
+	border: 1px solid #606060; /* Aula 19: Colocando borda na tabela (borda somente externa). */
+	padding: 10px;
+	/* Aula 19: 'text-align: center';  Alinhamento horizontal do texto; */
+	/* Aula 19: 'vertical-align: middle'; Alinhamento vertical do texto; */
+}
+
+table#tabelaspec td.ce { /* Aula 20: Definida a classe para a coluna da esquerda (ce), podemos definir a formatação para essa coluna específica. Note que a forma de referenciar a classe é utilizando a tag.nome_da_classe. */ 
+	color: #ffffff; /* Cor da fonte: branca; */
+	background-color: #606060;  /* Cor de fundo: Cinza escuro; */
+	vertical-align: top; /* Alinhamento vertical */
+	font-weight: bold; /* Negrito */
+	text-align: right; /* Alinhamento horizontal dentro da célula */
+}
+
+table#tabelaspec td.cd { /* Aula 20: Definida a classe para a coluna da direita (cd), podemos definir a formatação para essa coluna específica. Note que a forma de referenciar a classe é utilizando a tag.nome_da_classe. */ 
+	background-color: #cecece;  /* Cor de fundo: Um cinza mais claro e com tonalidade diferente; */
+}
+
+table#tabelaspec caption { /* Aula 20: Definindo a formatação do título da tabela. */
+	color: #888888; /* Cor da fonte: Cinza; */
+	font-size: 13pt; /* Tamanho da fonte; */
+	font-weight: bolder; /* Peso da fonte: Negrito; */
+}
+
+table#tabelaspec caption span { /* Aula 20: Definindo a formatação de um 'span' dentro do título da tabela. */
+	display: block; /* Criei um block para poder fazê-lo flutuar diferente do restante do título. */
+	float: right; /* Definindo a flutuação ao lado direito */
+	color: #000000; /* Definindo uma cor diferente do restante do título: preta; */
+	font-size: 8pt; /* Tamanho da fonte */
+	margin-top: 10px; /* Distância da margem, pois o 'Mar/2013' deve aparecer juntinho a tabela. Com esse código eu afasto o texto da borda superior, eu poderia utilizar o 'margin-bottom' para definir a distância da margem inferior. */
+}
+
+aside#lateral { /* Aula 18: definindo as section, aside e footer do website e iniciando as formatações delas. */
+	display: block; /* define que o aside seja um bloco */
+	width: 350px; /* define a largura de aside */
+	float: right; /* define que a seção vai flutuar pelo lado direito do website */
+	background-color: #dddddd; /* Define a cor de fundo do 'aside' */
+	padding: 10px;
+	margin-top: 10px;
+	box-shadow: 2px 2px 2px rgba (0,0,0,.5); /* ERROR: Essa sombra não está funcionado, ver no final do curso. */
+}
+
+aside#lateral h1 { /* Aula 21: Definindo as formatações para os títulos do 'aside'; */
+	font-family: 'FonteLogo', sans-serif;
+	font-size: 20pt;
+	color: #606060;
+	margin-top: 0px;
+}
+
+aside#lateral h2 { /* Aula 21: Definindo as formatações para os títulos do 'aside'; */
+	background-color: #606060;
+	font-size: 13pt; /* Neste caso, definimos o mesmo tamanho da fonte do 'h2' do 'article' para garantir a harmonia na visualização do site; */
+	color: #ffffff;
+	padding: 5px;
+}
+
+footer#rodape { /* Aula 18: definindo as section, aside e footer do website e iniciando as formatações delas. */
+	clear: both; /* Como eu configurei a posição da section e de aside anteriormente, com este comando, eu limpo essa configuração e o rodapé vai usar toda a largura de body */
+	border-top: 1px solid #606060; /* Aula 18: adicionar borda superior com os parâmetros de espessura (1px), tipo (solid) e cor (#606060). */
+}
+
+footer#rodape p {
+	text-align: center;
+}
